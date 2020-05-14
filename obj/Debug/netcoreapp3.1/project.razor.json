@@ -20531,11 +20531,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -20548,6 +20543,11 @@
     {
       "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Home/Sobre.cshtml",
+      "TargetPath": "Views\\Home\\Sobre.cshtml",
       "FileKind": "mvc"
     },
     {

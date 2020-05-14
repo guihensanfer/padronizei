@@ -20,7 +20,6 @@
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Padronizei.TagHelpers.output.cache
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Padronizei.RazorCoreGenerate.cache
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
-/home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs
@@ -35,3 +34,4 @@
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Padronizei.pdb
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Padronizei.genruntimeconfig.cache
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Padronizei.csproj.CopyComplete
+/home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Razor/Views/Home/Sobre.cshtml.g.cs
