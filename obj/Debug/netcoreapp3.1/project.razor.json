@@ -20531,6 +20531,51 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Colaborador/Create.cshtml",
+      "TargetPath": "Views\\Colaborador\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Conteudo/Index.cshtml",
+      "TargetPath": "Views\\Conteudo\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Conteudo/Delete.cshtml",
+      "TargetPath": "Views\\Conteudo\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Departamento/Edit.cshtml",
+      "TargetPath": "Views\\Departamento\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Organizacao/Details.cshtml",
+      "TargetPath": "Views\\Organizacao\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/GrupoTrabalho/Create.cshtml",
+      "TargetPath": "Views\\GrupoTrabalho\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Departamento/Details.cshtml",
+      "TargetPath": "Views\\Departamento\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Colaborador/Details.cshtml",
+      "TargetPath": "Views\\Colaborador\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Conteudo/Edit.cshtml",
+      "TargetPath": "Views\\Conteudo\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -20538,6 +20583,51 @@
     {
       "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/GrupoTrabalho/Edit.cshtml",
+      "TargetPath": "Views\\GrupoTrabalho\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/GrupoTrabalho/Index.cshtml",
+      "TargetPath": "Views\\GrupoTrabalho\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Conteudo/Create.cshtml",
+      "TargetPath": "Views\\Conteudo\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Organizacao/Edit.cshtml",
+      "TargetPath": "Views\\Organizacao\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Departamento/Delete.cshtml",
+      "TargetPath": "Views\\Departamento\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Colaborador/Edit.cshtml",
+      "TargetPath": "Views\\Colaborador\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Organizacao/Create.cshtml",
+      "TargetPath": "Views\\Organizacao\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Organizacao/Delete.cshtml",
+      "TargetPath": "Views\\Organizacao\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Colaborador/Index.cshtml",
+      "TargetPath": "Views\\Colaborador\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20551,8 +20641,43 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Departamento/Create.cshtml",
+      "TargetPath": "Views\\Departamento\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/GrupoTrabalho/Details.cshtml",
+      "TargetPath": "Views\\GrupoTrabalho\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/GrupoTrabalho/Delete.cshtml",
+      "TargetPath": "Views\\GrupoTrabalho\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Departamento/Index.cshtml",
+      "TargetPath": "Views\\Departamento\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Colaborador/Delete.cshtml",
+      "TargetPath": "Views\\Colaborador\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Conteudo/Details.cshtml",
+      "TargetPath": "Views\\Conteudo\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/Organizacao/Index.cshtml",
+      "TargetPath": "Views\\Organizacao\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],
