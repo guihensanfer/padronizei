@@ -167,3 +167,5 @@
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Razor/Views/Organizacao/Details.cshtml.g.cs
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Razor/Views/Organizacao/Edit.cshtml.g.cs
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Razor/Views/Organizacao/Index.cshtml.g.cs
+C:\Users\Luan Pedro\Source\Repos\guihensanfer\padronizei\obj\Debug\netcoreapp3.1\Padronizei.dll
+C:\Users\Luan Pedro\Source\Repos\guihensanfer\padronizei\obj\Debug\netcoreapp3.1\Padronizei.pdb
