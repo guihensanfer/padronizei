@@ -35,3 +35,40 @@
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Padronizei.genruntimeconfig.cache
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Padronizei.csproj.CopyComplete
 /home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/Debug/netcoreapp3.1/Razor/Views/Home/Sobre.cshtml.g.cs
+C:\Users\Luan Pedro\source\repos\padronizei2\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Luan Pedro\source\repos\padronizei2\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Luan Pedro\source\repos\padronizei2\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Luan Pedro\source\repos\padronizei2\bin\Debug\netcoreapp3.1\Padronizei.exe
+C:\Users\Luan Pedro\source\repos\padronizei2\bin\Debug\netcoreapp3.1\Padronizei.deps.json
+C:\Users\Luan Pedro\source\repos\padronizei2\bin\Debug\netcoreapp3.1\Padronizei.runtimeconfig.json
+C:\Users\Luan Pedro\source\repos\padronizei2\bin\Debug\netcoreapp3.1\Padronizei.runtimeconfig.dev.json
+C:\Users\Luan Pedro\source\repos\padronizei2\bin\Debug\netcoreapp3.1\Padronizei.dll
+C:\Users\Luan Pedro\source\repos\padronizei2\bin\Debug\netcoreapp3.1\Padronizei.pdb
+C:\Users\Luan Pedro\source\repos\padronizei2\bin\Debug\netcoreapp3.1\Padronizei.Views.dll
+C:\Users\Luan Pedro\source\repos\padronizei2\bin\Debug\netcoreapp3.1\Padronizei.Views.pdb
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.csprojAssemblyReference.cache
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.csproj.CoreCompileInputs.cache
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.RazorAssemblyInfo.cache
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.RazorAssemblyInfo.cs
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.AssemblyInfoInputs.cache
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.AssemblyInfo.cs
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.TagHelpers.input.cache
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.TagHelpers.output.cache
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.RazorCoreGenerate.cache
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Sobre.cshtml.g.cs
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.RazorTargetAssemblyInfo.cache
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.RazorTargetAssemblyInfo.cs
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.Views.pdb
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\staticwebassets\Padronizei.StaticWebAssets.Manifest.cache
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\staticwebassets\Padronizei.StaticWebAssets.xml
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.dll
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.pdb
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.genruntimeconfig.cache
+C:\Users\Luan Pedro\source\repos\padronizei2\obj\Debug\netcoreapp3.1\Padronizei.csproj.CopyComplete
