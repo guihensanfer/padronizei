@@ -8212,11 +8212,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Luan Pedro\\source\\repos\\guihensanfer\\padronizei\\Padronizei.csproj",
+      "projectUniqueName": "C:\\Users\\Luan Pedro\\source\\repos\\padronizei\\Padronizei.csproj",
       "projectName": "Padronizei",
-      "projectPath": "C:\\Users\\Luan Pedro\\source\\repos\\guihensanfer\\padronizei\\Padronizei.csproj",
+      "projectPath": "C:\\Users\\Luan Pedro\\source\\repos\\padronizei\\Padronizei.csproj",
       "packagesPath": "C:\\Users\\Luan Pedro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Luan Pedro\\source\\repos\\guihensanfer\\padronizei\\obj\\",
+      "outputPath": "C:\\Users\\Luan Pedro\\source\\repos\\padronizei\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

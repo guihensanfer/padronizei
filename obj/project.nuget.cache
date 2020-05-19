@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8DJDP3V6FQjwjNjowMEcfuxvwgtcNIqUI/5kOGAOPoARuwMQjnHBDGi8IebvzhvItfSH3fuzK4OTWzyf4zGW/A==",
+  "dgSpecHash": "ZaLDVG6ltZFXB/5Oh7Hd1H1FDX4Ndazx5FTNHCGS6EHU6m40Xo/l6VA4BMC9CFl98fhesg2iXwzLeUz4GcFsIg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Luan Pedro\\source\\repos\\guihensanfer\\padronizei\\Padronizei.csproj",
+  "projectFilePath": "C:\\Users\\Luan Pedro\\source\\repos\\padronizei\\Padronizei.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Luan Pedro\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Luan Pedro\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
