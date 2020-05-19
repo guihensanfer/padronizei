@@ -88,8 +88,21 @@ using Padronizei.Models;
 
                 Oferecer um sistema web para armazenar e gerenciar conteúdos de cunho profissional gerados pelos próprios colaboradores da organização. Também pretendemos fazer
                 com que está ferramente ajude no engajamento dos colaboradores, e assim aumentando a motivação dos colaboradores no ambiente de trabalho.
-
             </p>
+            <div class=""container"">
+                <div class=""row"">
+                    <div class=""col"">
+                        <h6></h6>
+                    </div>
+        ");
+                WriteLiteral(@"            <div class=""w-100""></div>
+                    <div class=""col"">col</div>
+                    <div class=""w-100""></div>
+                    <div class=""col"">col</div>
+                    <div class=""w-100""></div>
+                    <div class=""col"">col</div>
+                </div>
+            </div>
         </div>
     </div>
 ");

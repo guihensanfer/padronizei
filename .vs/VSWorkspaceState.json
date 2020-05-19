@@ -1,6 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers",
+    "\\obj",
+    "\\obj\\Debug",
+    "\\obj\\Release",
+    "\\Properties",
+    "\\Views",
+    "\\Views\\Conteudo",
+    "\\Views\\Departamento",
+    "\\Views\\GrupoTrabalho"
   ],
+  "SelectedNode": "\\Padronizei.csproj",
   "PreviewInSolutionExplorer": false
 }
