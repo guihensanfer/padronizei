@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Padronizei.Models;
 
@@ -45,6 +43,15 @@ namespace Padronizei.Controllers
         // GET: Colaborador/Create
         public IActionResult Create()
         {
+            List<Departamento> departamentos = _context.Departamentos.ToList();
+
+            departamentos.Insert(0, new Departamento(){
+                Id = 0,
+                Nome = "Selecione um departamento"
+            });
+
+            ViewBag.ListaDepartamentos = departamentos;
+
             return View();
         }
 

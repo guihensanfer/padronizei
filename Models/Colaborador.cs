@@ -20,10 +20,10 @@ namespace Padronizei.Models
         [Required]
         [EmailAddress]
         [StringLength(200)]
-        public string Email{get;set;}
-        [ForeignKey("Departamento")]
+        public string Email{get;set;}        
         [Required]
         public DateTime DataCriacao{get;set;}    
+        [ForeignKey("Departamento")]
         public int DepartamentoId{get;set;}            
     }
 }
