@@ -8211,11 +8211,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Padronizei.csproj",
       "projectName": "Padronizei",
       "projectPath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Padronizei.csproj",
       "packagesPath": "/home/guilherme/.nuget/packages/",
       "outputPath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/obj/",
+=======
+      "projectUniqueName": "C:\\Users\\Luan Pedro\\source\\repos\\padronizei\\Padronizei.csproj",
+      "projectName": "Padronizei",
+      "projectPath": "C:\\Users\\Luan Pedro\\source\\repos\\padronizei\\Padronizei.csproj",
+      "packagesPath": "C:\\Users\\Luan Pedro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Luan Pedro\\source\\repos\\padronizei\\obj\\",
+>>>>>>> c0648956e37ea6e65762367b8d5ac5c1effab313
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/guilherme/.nuget/NuGet/NuGet.Config"
