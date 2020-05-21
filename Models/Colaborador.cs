@@ -10,19 +10,23 @@ namespace Padronizei.Models
         [Key]
         public int Id{get;set;}
         [Required]
-
         [StringLength(200)]
         public string Nome{get;set;}
         // Bio: Mensagem de perfil pessoal do colaborador
+        [Display(Name="Biografia resumida")]
+        [StringLength(150)]
         public string Bio{get;set;}
+        [Display(Name = "Matrícula")]
         [StringLength(100)]
         public string Matricula{get;set;}
         [Required]
         [EmailAddress]
         [StringLength(200)]
         public string Email{get;set;}        
+        [Display(Name="Data de criação")]        
         [Required]
         public DateTime DataCriacao{get;set;}    
+        [Display(Name="Departamento")]
         [ForeignKey("Departamento")]
         public int DepartamentoId{get;set;}            
     }

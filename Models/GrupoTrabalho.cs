@@ -15,7 +15,9 @@ namespace Padronizei.Models
         [Required]
         [StringLength(200)]
         public string Descricao{get;set;}
+        [Display(Name="Data de criação")]
         public DateTime DataCriacao{get;set;}
+        [Display(Name="Organização")]
         [ForeignKey("Organizacao")]
         public int OrganizacaoId{get;set;}
         [Required]
