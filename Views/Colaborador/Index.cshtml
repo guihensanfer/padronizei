@@ -1,25 +1,19 @@
 @model IEnumerable<Padronizei.Models.Colaborador>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Colaboradores";
 }
 
-<h1>Index</h1>
+<h1>Colaboradores</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar novo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Matricula)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Email)
@@ -40,12 +34,6 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Bio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Matricula)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
@@ -55,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.DepartamentoId)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluír</a>
             </td>
         </tr>
 }

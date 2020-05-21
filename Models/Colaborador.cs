@@ -12,8 +12,7 @@ namespace Padronizei.Models
         [Required]
         [StringLength(200)]
         public string Nome{get;set;}
-        // Bio: Mensagem de perfil pessoal do colaborador
-        [Display(Name="Biografia resumida")]
+        // Bio: Mensagem de perfil pessoal do colaborador        
         [StringLength(150)]
         public string Bio{get;set;}
         [Display(Name = "Matrícula")]
@@ -22,9 +21,11 @@ namespace Padronizei.Models
         [Required]
         [EmailAddress]
         [StringLength(200)]
-        public string Email{get;set;}        
-        [Display(Name="Data de criação")]        
+        [Display(Name="E-mail")] 
+        public string Email{get;set;}                
         [Required]
+        [DataType(DataType.Date)]
+        [Display(Name="Data de criação")]           
         public DateTime DataCriacao{get;set;}    
         [Display(Name="Departamento")]
         [ForeignKey("Departamento")]
