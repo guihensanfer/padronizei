@@ -23,7 +23,7 @@ namespace Padronizei.Controllers
         public async Task<IActionResult> Index()
         {
             var colaboradores = _context.Colaboradores
-                .Include(d => d.DepartamentoId)
+                .Include(d => d.DepartamentoId)                
                 .AsNoTracking();
 
             return View(await _context.Colaboradores.ToListAsync());
