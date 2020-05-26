@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Padronizei.Models;
 
@@ -50,7 +51,7 @@ namespace Padronizei.Controllers
         // GET: Colaborador/Create
         public IActionResult Create()
         {            
-            ViewBag.ListaDepartamentos = departamentoController.ObterDepartamentos(true);
+            ViewBag.ListaDepartamentos = new SelectList(departamentoController.ObterDepartamentos(true), "Id", "Nome");
 
             return View();
         }        
@@ -67,6 +68,7 @@ namespace Padronizei.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(colaborador);
         }
 
@@ -84,7 +86,7 @@ namespace Padronizei.Controllers
                 return NotFound();
             }
             
-            ViewBag.ListaDepartamentos = departamentoController.ObterDepartamentos(true);
+            ViewBag.ListaDepartamentos = new SelectList( departamentoController.ObterDepartamentos(true), "Id", "Nome");
 
             return View(colaborador);
         }
