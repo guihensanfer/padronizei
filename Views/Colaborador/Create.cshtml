@@ -1,7 +1,7 @@
 @model Padronizei.Models.Colaborador
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Criar colaborador";
 }
 
 <h1>Criar</h1>
@@ -31,25 +31,20 @@
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataCriacao" class="control-label"></label>
-                <input asp-for="DataCriacao" class="form-control" />
-                <span asp-validation-for="DataCriacao" class="text-danger"></span>
-            </div>
+            </div>            
             <div class="form-group">
                 <label asp-for="DepartamentoId" class="control-label"></label>
-                <select asp-for="DepartamentoId" class="form-control" asp-items="@(new SelectList(ViewBag.ListaDepartamentos, "Id", "Nome"))"></select>
+                <select asp-for="DepartamentoId" class="form-control" asp-items="@ViewBag.ListaDepartamentos"></select>
                 <span asp-validation-for="DepartamentoId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Criar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar à lista</a>
 </div>
 

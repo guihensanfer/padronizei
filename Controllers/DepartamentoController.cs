@@ -18,6 +18,19 @@ namespace Padronizei.Controllers
             _context = context;
         }
 
+        public List<Departamento> ObterDepartamentos(bool listaParaSelectField = false)
+        {
+            List<Departamento> resultante = _context.Departamentos.ToList();
+
+            if(listaParaSelectField)
+                resultante.Insert(0, new Departamento(){
+                    Id = 0,
+                    Nome = "Selecione um item"                    
+                });
+
+            return resultante;
+        }
+
         // GET: Departamento
         public async Task<IActionResult> Index()
         {

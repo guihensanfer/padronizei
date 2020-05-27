@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Padronizei.Models;
 
@@ -10,15 +12,21 @@ namespace Padronizei.Controllers
     public class ColaboradorController : Controller
     {
         private readonly AplicacaoDbContext _context;
+        private readonly DepartamentoController departamentoController;
 
         public ColaboradorController(AplicacaoDbContext context)
         {
             _context = context;
+            departamentoController = new DepartamentoController(context);
         }
 
         // GET: Colaborador
         public async Task<IActionResult> Index()
         {
+            var colaboradores = _context.Colaboradores
+                .Include(d => d.DepartamentoId)                
+                .AsNoTracking();
+
             return View(await _context.Colaboradores.ToListAsync());
         }
 
@@ -42,32 +50,25 @@ namespace Padronizei.Controllers
 
         // GET: Colaborador/Create
         public IActionResult Create()
-        {
-            List<Departamento> departamentos = _context.Departamentos.ToList();
-
-            departamentos.Insert(0, new Departamento(){
-                Id = 0,
-                Nome = "Selecione um departamento"
-            });
-
-            ViewBag.ListaDepartamentos = departamentos;
+        {            
+            ViewBag.ListaDepartamentos = new SelectList(departamentoController.ObterDepartamentos(true), "Id", "Nome");
 
             return View();
-        }
-
-        // POST: Colaborador/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        }        
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Bio,Matricula,Email,DataCriacao,DepartamentoId")] Colaborador colaborador)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Bio,Matricula,Email,DepartamentoId")] Colaborador colaborador)
         {
             if (ModelState.IsValid)
             {
+                colaborador.DataCriacao = DateTime.Now;
+
                 _context.Add(colaborador);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(colaborador);
         }
 
@@ -84,6 +85,9 @@ namespace Padronizei.Controllers
             {
                 return NotFound();
             }
+            
+            ViewBag.ListaDepartamentos = new SelectList( departamentoController.ObterDepartamentos(true), "Id", "Nome");
+
             return View(colaborador);
         }
 
@@ -102,8 +106,12 @@ namespace Padronizei.Controllers
             if (ModelState.IsValid)
             {
                 try
-                {
+                {                    
                     _context.Update(colaborador);
+
+                    // Desabilita a alteração deste campo na edição                    
+                    _context.Entry(colaborador).Property(x => x.DataCriacao).IsModified = false;
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

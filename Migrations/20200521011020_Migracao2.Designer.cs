@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Padronizei.Models;
 
 namespace Padronizei.Migrations
 {
     [DbContext(typeof(AplicacaoDbContext))]
-    partial class AplicacaoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200521011020_Migracao2")]
+    partial class Migracao2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oOC3W20gv0OGugUQKi9FYCU6ljyfZwtXVNCf0HqY7W/1U3sl/52w/lh5H+CLxvUN/1XSs0qpYhOoi6qpegCVEg==",
+  "dgSpecHash": "ZTHbN9cd6k6TtuICaeUUJ0WVeeiv2h1CbhtjVbgwRnhNmnS0jZ05LhT+gp8R0IY8v4rEUZAKVYU15VrsbVUouQ==",
   "success": true,
   "projectFilePath": "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Padronizei.csproj",
   "expectedPackageFiles": [
@@ -155,7 +155,8 @@
     "/home/guilherme/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/home/guilherme/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/home/guilherme/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "/home/guilherme/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "/home/guilherme/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "/home/guilherme/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.2/microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
   "logs": []
 }
