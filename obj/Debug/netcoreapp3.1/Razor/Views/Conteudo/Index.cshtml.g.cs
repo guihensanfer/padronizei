@@ -26,8 +26,15 @@ using Padronizei.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "/home/guilherme/Área de Trabalho/Padronizei/Padronizei/Views/_ViewImports.cshtml"
+using ReflectionIT.Mvc.Paging;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ad07f8c4eb33f13839b656c9fa00861372e3545f", @"/Views/Conteudo/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0d014c0f3ee2783639a45c4bbbe0289d8a32396d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a7fddeac0a0270e8056ac0880b39a1e086ddd715", @"/Views/_ViewImports.cshtml")]
     public class Views_Conteudo_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Padronizei.Models.Conteudo>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -68,7 +75,7 @@ using Padronizei.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>Index</h1>\r\n\r\n<p>\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad07f8c4eb33f13839b656c9fa00861372e3545f4520", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad07f8c4eb33f13839b656c9fa00861372e3545f4706", async() => {
                 WriteLiteral("Create New");
             }
             );
@@ -188,7 +195,7 @@ using Padronizei.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad07f8c4eb33f13839b656c9fa00861372e3545f9850", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad07f8c4eb33f13839b656c9fa00861372e3545f10036", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -219,7 +226,7 @@ using Padronizei.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad07f8c4eb33f13839b656c9fa00861372e3545f11987", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad07f8c4eb33f13839b656c9fa00861372e3545f12174", async() => {
                 WriteLiteral("Details");
             }
             );
@@ -250,7 +257,7 @@ using Padronizei.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad07f8c4eb33f13839b656c9fa00861372e3545f14131", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad07f8c4eb33f13839b656c9fa00861372e3545f14318", async() => {
                 WriteLiteral("Delete");
             }
             );

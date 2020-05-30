@@ -1,4 +1,4 @@
-@model IEnumerable<Padronizei.Models.Colaborador>
+@model ReflectionIT.Mvc.Paging.PagingList<Padronizei.Models.Colaborador>
 
 @{
     ViewData["Title"] = "Colaboradores";
@@ -22,7 +22,7 @@
                 @Html.DisplayNameFor(model => model.DataCriacao)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DepartamentoId)
+                @Html.DisplayNameFor(model => model.DepartamentoRelacionado)
             </th>
             <th></th>
         </tr>
@@ -40,7 +40,7 @@
                 @Html.DisplayFor(modelItem => item.DataCriacao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DepartamentoId)
+                @Html.DisplayFor(modelItem => item.DepartamentoRelacionado.Nome)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
@@ -51,3 +51,6 @@
 }
     </tbody>
 </table>
+<nav aria-label="Page navigation example">
+    <vc:pager paging-list="@Model"/>
+</nav>

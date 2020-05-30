@@ -33,7 +33,7 @@ namespace Padronizei.Migrations
                     b.Property<DateTime>("DataCriacao")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DepartamentoId")
+                    b.Property<int?>("Departamento")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -51,6 +51,8 @@ namespace Padronizei.Migrations
                         .HasMaxLength(200);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Departamento");
 
                     b.ToTable("Colaborador");
                 });
@@ -161,6 +163,13 @@ namespace Padronizei.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Organizacao");
+                });
+
+            modelBuilder.Entity("Padronizei.Models.Colaborador", b =>
+                {
+                    b.HasOne("Padronizei.Models.Departamento", "DepartamentoRelacionado")
+                        .WithMany()
+                        .HasForeignKey("Departamento");
                 });
 #pragma warning restore 612, 618
         }

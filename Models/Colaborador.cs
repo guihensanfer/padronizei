@@ -28,7 +28,7 @@ namespace Padronizei.Models
         [Display(Name="Data de criação")]           
         public DateTime DataCriacao{get;set;}    
         [Display(Name="Departamento")]
-        [ForeignKey("Departamento")]
-        public int DepartamentoId{get;set;}            
+        [ForeignKey("Departamento")]        
+        public Departamento DepartamentoRelacionado{get;set;}                 
     }
 }

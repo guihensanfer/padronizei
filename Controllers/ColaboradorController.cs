@@ -1,11 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Padronizei.Models;
+using ReflectionIT.Mvc.Paging;
 
 namespace Padronizei.Controllers
 {
@@ -21,13 +21,14 @@ namespace Padronizei.Controllers
         }
 
         // GET: Colaborador
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
             var colaboradores = _context.Colaboradores
-                .Include(d => d.DepartamentoId)                
-                .AsNoTracking();
+                .Include(d => d.DepartamentoRelacionado)                                                
+                .OrderBy(x => x.Nome);
+            var model = await PagingList.CreateAsync(colaboradores, 2, page);
 
-            return View(await _context.Colaboradores.ToListAsync());
+            return View(model);
         }
 
         // GET: Colaborador/Details/5
@@ -58,7 +59,7 @@ namespace Padronizei.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Bio,Matricula,Email,DepartamentoId")] Colaborador colaborador)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Bio,Matricula,Email")] Colaborador colaborador)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +97,7 @@ namespace Padronizei.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Bio,Matricula,Email,DataCriacao,DepartamentoId")] Colaborador colaborador)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Bio,Matricula,Email,DataCriacao")] Colaborador colaborador)
         {
             if (id != colaborador.Id)
             {

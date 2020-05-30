@@ -33,8 +33,12 @@ namespace Padronizei.Controllers
 
         // GET: Departamento
         public async Task<IActionResult> Index()
-        {
-            return View(await _context.Departamentos.ToListAsync());
+        {            
+            var departamentos = _context.Departamentos
+                .Include(x => x.Organizacao)
+                .AsNoTracking();
+
+            return View(await departamentos.ToListAsync());
         }
 
         // GET: Departamento/Details/5

@@ -15,5 +15,8 @@ namespace Padronizei.Models
         [Display(Name="Organização")]
         [ForeignKey("Organizacao")]
         public int OrganizacaoId{get;set;}
+        
+        [NotMapped]
+        public Organizacao Organizacao{get;set;}
     }
 }
