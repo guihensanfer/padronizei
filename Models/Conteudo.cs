@@ -33,8 +33,8 @@ namespace Padronizei.Models
         [ForeignKey("Colaborador")]
         public int ColaboradorId{get;set;}
         // Departamento que envolve o processo do conteudo postado
-        [Display(Name="Departamento relacionado")]        
-        [ForeignKey("Departamento")]
+        [Display(Name="Departamento relacionado")]                
         public int DepartamentoId{get;set;}        
+        public Departamento Departamento{get;set;}
     }
 }
