@@ -9,6 +9,19 @@
 <p>
     <a asp-action="Create">Criar novo</a>
 </p>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index" method="GET">
+            <div class="form-group">
+                <label for="buscaNome" class="control-label"></label>
+                <input id="buscaNome" name="nome" type="text" placeholder="Procurar por nome" value="@Context.Request.Query["nome"].ToString()" class="form-control" />                
+            </div>
+            <div class="form-group">                
+                <input id="buscaFiltro" type="submit" value="Pesquisar" class="button" />                
+            </div>
+        </form>
+    </div>
+</div>
 <table class="table">
     <thead>
         <tr>

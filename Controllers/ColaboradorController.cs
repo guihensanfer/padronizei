@@ -24,16 +24,23 @@ namespace Padronizei.Controllers
         }
 
         // GET: Colaborador
-        public async Task<IActionResult> Index(int page = 1)
+        public async Task<IActionResult> Index(int page = 1, string nome = null)
         {
             int paginacaoPadrao = Configuration.GetValue<int>("ParametrosPadroesProjeto:QuantidadeItensListadosPaginacao");
             var colaboradores = _context.Colaboradores
-                .Include(d => d.Departamento)                                                
-                .AsNoTracking()
-                .OrderByDescending(x => x.DataCriacao);                
-            var model = await PagingList.CreateAsync(colaboradores, paginacaoPadrao, page);
+                .Include(x => x.Departamento)
+                .AsNoTracking();
 
-            return View(model);
+            // Filtra por nome
+            if(!string.IsNullOrEmpty(nome))
+                colaboradores = colaboradores
+                    .Where(c => c.Nome.Contains(nome));
+
+            // Por fim, gera uma lista ordenada para ser paginada
+            var resultante = colaboradores                
+                .OrderByDescending(x => x.DataCriacao);                                
+                
+            return View(await PagingList.CreateAsync(resultante, paginacaoPadrao, page));
         }
 
         // GET: Colaborador/Details/5
