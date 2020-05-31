@@ -24,7 +24,7 @@ namespace Padronizei.Controllers
         }
 
         // GET: Colaborador
-        public async Task<IActionResult> Index(int page = 1, string nome = null)
+        public async Task<IActionResult> Index(int page = 1, string nome = null, string email = null, string data = null, string departamento = null)
         {
             int paginacaoPadrao = Configuration.GetValue<int>("ParametrosPadroesProjeto:QuantidadeItensListadosPaginacao");
             var colaboradores = _context.Colaboradores
@@ -32,9 +32,21 @@ namespace Padronizei.Controllers
                 .AsNoTracking();
 
             // Filtra por nome
-            if(!string.IsNullOrEmpty(nome))
+            if (!string.IsNullOrEmpty(nome))
                 colaboradores = colaboradores
                     .Where(c => c.Nome.Contains(nome));
+            // Filtra por email
+            if (!string.IsNullOrEmpty(email))
+                colaboradores = colaboradores
+                    .Where(c => c.Nome.Contains(email));
+            // Filtra por data
+            if (!string.IsNullOrEmpty(data))
+                colaboradores = colaboradores
+                    .Where(c => c.Nome.Contains(data));
+            // Filtra por departamento
+            if (!string.IsNullOrEmpty(departamento))
+                colaboradores = colaboradores
+                    .Where(c => c.Nome.Contains(departamento));
 
             // Por fim, gera uma lista ordenada para ser paginada
             var resultante = colaboradores                
