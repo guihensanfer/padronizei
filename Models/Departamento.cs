@@ -12,11 +12,8 @@ namespace Padronizei.Models
         [StringLength(100)]
         public string Nome{get;set;}
         [Required]
-        [Display(Name="Organização")]
-        [ForeignKey("Organizacao")]
-        public int OrganizacaoId{get;set;}
-        
-        [NotMapped]
+        [Display(Name="Organização")]        
+        public int OrganizacaoId{get;set;}            
         public Organizacao Organizacao{get;set;}
     }
 }

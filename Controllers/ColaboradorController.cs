@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Padronizei.Models;
 using ReflectionIT.Mvc.Paging;
 
@@ -13,20 +14,24 @@ namespace Padronizei.Controllers
     {
         private readonly AplicacaoDbContext _context;
         private readonly DepartamentoController departamentoController;
+        public IConfiguration Configuration { get; }
 
-        public ColaboradorController(AplicacaoDbContext context)
+        public ColaboradorController(AplicacaoDbContext context, IConfiguration configuration)
         {
             _context = context;
             departamentoController = new DepartamentoController(context);
+            Configuration = configuration;
         }
 
         // GET: Colaborador
         public async Task<IActionResult> Index(int page = 1)
         {
+            int paginacaoPadrao = Configuration.GetValue<int>("ParametrosPadroesProjeto:QuantidadeItensListadosPaginacao");
             var colaboradores = _context.Colaboradores
-                .Include(d => d.DepartamentoRelacionado)                                                
-                .OrderBy(x => x.Nome);
-            var model = await PagingList.CreateAsync(colaboradores, 2, page);
+                .Include(d => d.Departamento)                                                
+                .AsNoTracking()
+                .OrderByDescending(x => x.DataCriacao);                
+            var model = await PagingList.CreateAsync(colaboradores, paginacaoPadrao, page);
 
             return View(model);
         }
@@ -40,6 +45,7 @@ namespace Padronizei.Controllers
             }
 
             var colaborador = await _context.Colaboradores
+                .Include(x => x.Departamento)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (colaborador == null)
             {
@@ -59,7 +65,7 @@ namespace Padronizei.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Bio,Matricula,Email")] Colaborador colaborador)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Bio,Matricula,Email, DepartamentoId")] Colaborador colaborador)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +103,7 @@ namespace Padronizei.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Bio,Matricula,Email,DataCriacao")] Colaborador colaborador)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Bio,Matricula,Email,DataCriacao,DepartamentoId")] Colaborador colaborador)
         {
             if (id != colaborador.Id)
             {
@@ -140,6 +146,7 @@ namespace Padronizei.Controllers
             }
 
             var colaborador = await _context.Colaboradores
+                .Include(x => x.Departamento)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (colaborador == null)
             {
