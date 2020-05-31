@@ -1,9 +1,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Padronizei.Models
-{
+{    
     public enum Visibilidade
     {
         Publico = 0,
@@ -12,7 +13,7 @@ namespace Padronizei.Models
 
     [Table("Conteudo")]
     public class Conteudo
-    {
+    {        
         [Key]
         public int Id{get;set;}
         [Required]
@@ -26,6 +27,7 @@ namespace Padronizei.Models
         public Visibilidade Visibilidade{get;set;}
         [Required]
         [Display(Name="Data de criação")]
+        [DataType(DataType.Date)]
         public DateTime DataCriacao{get;set;}        
         // Colaborador que postou o conteúdo
         [Required]
@@ -35,6 +37,6 @@ namespace Padronizei.Models
         // Departamento que envolve o processo do conteudo postado
         [Display(Name="Departamento relacionado")]                
         public int DepartamentoId{get;set;}        
-        public Departamento Departamento{get;set;}
+        public Departamento Departamento{get;set;}        
     }
 }

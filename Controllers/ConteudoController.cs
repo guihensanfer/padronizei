@@ -12,15 +12,17 @@ namespace Padronizei.Controllers
     public class ConteudoController : Controller
     {
         private readonly AplicacaoDbContext _context;
+        private readonly DepartamentoController departamentoController;
 
         public ConteudoController(AplicacaoDbContext context)
         {
             _context = context;
+            departamentoController = new DepartamentoController(_context);
         }
 
         // GET: Conteudo
         public async Task<IActionResult> Index()
-        {
+        {            
             return View(await _context.Conteudos.ToListAsync());
         }
 
@@ -45,6 +47,8 @@ namespace Padronizei.Controllers
         // GET: Conteudo/Create
         public IActionResult Create()
         {
+            ViewBag.ListaDepartamentos = new SelectList(departamentoController.ObterDepartamentos(true), "Id", "Nome");
+
             return View();
         }
 
@@ -57,6 +61,8 @@ namespace Padronizei.Controllers
         {
             if (ModelState.IsValid)
             {
+                conteudo.DataCriacao = DateTime.Now;
+
                 _context.Add(conteudo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -97,6 +103,10 @@ namespace Padronizei.Controllers
                 try
                 {
                     _context.Update(conteudo);
+
+                    // Desabilita a alteração deste campo na edição                    
+                    _context.Entry(conteudo).Property(x => x.DataCriacao).IsModified = false;
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

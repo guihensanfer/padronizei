@@ -72,7 +72,7 @@ namespace Padronizei.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Bio,Matricula,Email, DepartamentoId")] Colaborador colaborador)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Bio,Matricula,Email,DepartamentoId")] Colaborador colaborador)
         {
             if (ModelState.IsValid)
             {
