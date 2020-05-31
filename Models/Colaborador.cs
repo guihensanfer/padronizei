@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Padronizei.Models
 {
@@ -26,9 +27,10 @@ namespace Padronizei.Models
         [Required]
         [DataType(DataType.Date)]
         [Display(Name="Data de criação")]           
-        public DateTime DataCriacao{get;set;}    
-        [Display(Name="Departamento")]
-        [ForeignKey("Departamento")]
-        public int DepartamentoId{get;set;}            
+        public DateTime DataCriacao{get;set;}            
+        [Display(Name="Departamento")]        
+        public int DepartamentoId{get;set;}
+        [Display(Name="Departamento")]                   
+        public Departamento Departamento{get;set;}                                 
     }
 }

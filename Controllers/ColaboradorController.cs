@@ -1,11 +1,12 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Padronizei.Models;
+using ReflectionIT.Mvc.Paging;
 
 namespace Padronizei.Controllers
 {
@@ -13,21 +14,33 @@ namespace Padronizei.Controllers
     {
         private readonly AplicacaoDbContext _context;
         private readonly DepartamentoController departamentoController;
+        public IConfiguration Configuration { get; }
 
-        public ColaboradorController(AplicacaoDbContext context)
+        public ColaboradorController(AplicacaoDbContext context, IConfiguration configuration)
         {
             _context = context;
             departamentoController = new DepartamentoController(context);
+            Configuration = configuration;
         }
 
         // GET: Colaborador
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, string nome = null)
         {
+            int paginacaoPadrao = Configuration.GetValue<int>("ParametrosPadroesProjeto:QuantidadeItensListadosPaginacao");
             var colaboradores = _context.Colaboradores
-                .Include(d => d.DepartamentoId)                
+                .Include(x => x.Departamento)
                 .AsNoTracking();
 
-            return View(await _context.Colaboradores.ToListAsync());
+            // Filtra por nome
+            if(!string.IsNullOrEmpty(nome))
+                colaboradores = colaboradores
+                    .Where(c => c.Nome.Contains(nome));
+
+            // Por fim, gera uma lista ordenada para ser paginada
+            var resultante = colaboradores                
+                .OrderByDescending(x => x.DataCriacao);                                
+                
+            return View(await PagingList.CreateAsync(resultante, paginacaoPadrao, page));
         }
 
         // GET: Colaborador/Details/5
@@ -39,6 +52,7 @@ namespace Padronizei.Controllers
             }
 
             var colaborador = await _context.Colaboradores
+                .Include(x => x.Departamento)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (colaborador == null)
             {
@@ -58,7 +72,7 @@ namespace Padronizei.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Bio,Matricula,Email,DepartamentoId")] Colaborador colaborador)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Bio,Matricula,Email, DepartamentoId")] Colaborador colaborador)
         {
             if (ModelState.IsValid)
             {
@@ -139,6 +153,7 @@ namespace Padronizei.Controllers
             }
 
             var colaborador = await _context.Colaboradores
+                .Include(x => x.Departamento)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (colaborador == null)
             {

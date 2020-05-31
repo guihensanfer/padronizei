@@ -20,8 +20,8 @@ namespace Padronizei.Models
         [Display(Name="Organização")]
         [ForeignKey("Organizacao")]
         public int OrganizacaoId{get;set;}
-        [Required]
-        [ForeignKey("Colaborador")]
+        [Required]        
         public int ColaboradorId{get;set;}        
+        public Colaborador Colaborador{get;set;}
     }
 }

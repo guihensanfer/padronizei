@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Padronizei.Models;
 
@@ -25,7 +23,7 @@ namespace Padronizei.Controllers
             if(listaParaSelectField)
                 resultante.Insert(0, new Departamento(){
                     Id = 0,
-                    Nome = "Selecione um item"                    
+                    Nome = "Selecione um departamento"                    
                 });
 
             return resultante;
@@ -33,8 +31,12 @@ namespace Padronizei.Controllers
 
         // GET: Departamento
         public async Task<IActionResult> Index()
-        {
-            return View(await _context.Departamentos.ToListAsync());
+        {            
+            var departamentos = _context.Departamentos
+                .Include(x => x.Organizacao)                
+                .AsNoTracking();
+
+            return View(await departamentos.ToListAsync());
         }
 
         // GET: Departamento/Details/5

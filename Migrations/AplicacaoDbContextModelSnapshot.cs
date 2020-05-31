@@ -52,6 +52,8 @@ namespace Padronizei.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DepartamentoId");
+
                     b.ToTable("Colaborador");
                 });
 
@@ -104,6 +106,8 @@ namespace Padronizei.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OrganizacaoId");
 
                     b.ToTable("Departamento");
                 });
@@ -161,6 +165,24 @@ namespace Padronizei.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Organizacao");
+                });
+
+            modelBuilder.Entity("Padronizei.Models.Colaborador", b =>
+                {
+                    b.HasOne("Padronizei.Models.Departamento", "Departamento")
+                        .WithMany()
+                        .HasForeignKey("DepartamentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Padronizei.Models.Departamento", b =>
+                {
+                    b.HasOne("Padronizei.Models.Organizacao", "Organizacao")
+                        .WithMany()
+                        .HasForeignKey("OrganizacaoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
