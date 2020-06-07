@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +23,19 @@ namespace Padronizei.Controllers
             departamentoController = new DepartamentoController(context);
             Configuration = configuration;
         }
+
+        public List<Colaborador> ObterColaboradores(bool listaParaSelectField = false)
+        {
+            List<Colaborador> resultante = _context.Colaboradores.ToList();
+
+            if(listaParaSelectField)
+                resultante.Insert(0, new Colaborador(){
+                    Id = 0,
+                    Nome = "Selecione um colaborador"                    
+                });
+
+            return resultante;
+        }        
 
         // GET: Colaborador
         public async Task<IActionResult> Index(int page = 1, string nome = null)

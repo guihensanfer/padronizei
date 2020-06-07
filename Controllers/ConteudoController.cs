@@ -13,11 +13,13 @@ namespace Padronizei.Controllers
     {
         private readonly AplicacaoDbContext _context;
         private readonly DepartamentoController departamentoController;
+        private readonly ColaboradorController colaboradorController;
 
         public ConteudoController(AplicacaoDbContext context)
         {
             _context = context;
             departamentoController = new DepartamentoController(_context);
+            colaboradorController = new ColaboradorController(_context, null);
         }
 
         // GET: Conteudo
@@ -48,6 +50,7 @@ namespace Padronizei.Controllers
         public IActionResult Create()
         {
             ViewBag.ListaDepartamentos = new SelectList(departamentoController.ObterDepartamentos(true), "Id", "Nome");
+            ViewBag.ListaColaboradores = new SelectList(colaboradorController.ObterColaboradores(true), "Id", "Nome");
 
             return View();
         }
