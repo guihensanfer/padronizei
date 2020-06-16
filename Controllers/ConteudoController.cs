@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +24,10 @@ namespace Padronizei.Controllers
         // GET: Conteudo
         public async Task<IActionResult> Index()
         {            
-            return View(await _context.Conteudos.ToListAsync());
+            return View(await _context.Conteudos
+                .Include(x => x.Colaborador)
+                .Include(x => x.Departamento)
+                .ToListAsync());
         }
 
         // GET: Conteudo/Details/5
@@ -37,6 +39,8 @@ namespace Padronizei.Controllers
             }
 
             var conteudo = await _context.Conteudos
+                .Include(x => x.Colaborador)
+                .Include(x => x.Departamento)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (conteudo == null)
             {
@@ -50,7 +54,7 @@ namespace Padronizei.Controllers
         public IActionResult Create()
         {
             ViewBag.ListaDepartamentos = new SelectList(departamentoController.ObterDepartamentos(true), "Id", "Nome");
-            ViewBag.ListaColaboradores = new SelectList(colaboradorController.ObterColaboradores(true), "Id", "Nome");
+            ViewBag.ListaColaboradores = new SelectList(colaboradorController.ObterColaboradores(true), "Id", "Nome");            
 
             return View();
         }
@@ -86,6 +90,10 @@ namespace Padronizei.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.ListaDepartamentos = new SelectList(departamentoController.ObterDepartamentos(true), "Id", "Nome");
+            ViewBag.ListaColaboradores = new SelectList(colaboradorController.ObterColaboradores(true), "Id", "Nome");
+
             return View(conteudo);
         }
 
@@ -137,7 +145,10 @@ namespace Padronizei.Controllers
             }
 
             var conteudo = await _context.Conteudos
+                .Include(x => x.Colaborador)
+                .Include(x => x.Departamento)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (conteudo == null)
             {
                 return NotFound();

@@ -1,7 +1,7 @@
 @model Padronizei.Models.Conteudo
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Criar conteúdo";
 }
 
 <h1>Criar</h1>
@@ -9,7 +9,7 @@
 <h4>Conteúdo</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -19,12 +19,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="Corpo" class="control-label"></label>
-                <input asp-for="Corpo" class="form-control" />
+                <textarea asp-for="Corpo" class="form-control" rows="8"></textarea>
                 <span asp-validation-for="Corpo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Visibilidade" class="control-label"></label>
-                <select asp-for="Visibilidade" class="form-control"></select>
+                <select asp-for="Visibilidade" class="form-control" asp-items="@Html.GetEnumSelectList<Padronizei.Models.Visibilidade>()">
+                    <option selected="selected" value="-1">Selecione uma opção</option>
+                </select>
                 <span asp-validation-for="Visibilidade" class="text-danger"></span>
             </div>
             @* <div class="form-group">

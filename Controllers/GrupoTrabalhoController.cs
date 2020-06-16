@@ -12,16 +12,25 @@ namespace Padronizei.Controllers
     public class GrupoTrabalhoController : Controller
     {
         private readonly AplicacaoDbContext _context;
+        private OrganizacaoController organizacaoController;
+        private ColaboradorController colaboradorController;
 
         public GrupoTrabalhoController(AplicacaoDbContext context)
         {
             _context = context;
+            organizacaoController = new OrganizacaoController(context);
+            colaboradorController = new ColaboradorController(context, null);
         }
 
         // GET: GrupoTrabalho
         public async Task<IActionResult> Index()
         {
-            return View(await _context.GruposTrabalhos.ToListAsync());
+            var grupos = await _context.GruposTrabalhos
+                .Include(x => x.Colaborador)
+                .Include(x => x.Organizacao)
+                .ToListAsync();
+
+            return View(grupos);
         }
 
         // GET: GrupoTrabalho/Details/5
@@ -33,6 +42,8 @@ namespace Padronizei.Controllers
             }
 
             var grupoTrabalho = await _context.GruposTrabalhos
+                .Include(x => x.Colaborador)
+                .Include(x => x.Organizacao)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (grupoTrabalho == null)
             {
@@ -45,6 +56,9 @@ namespace Padronizei.Controllers
         // GET: GrupoTrabalho/Create
         public IActionResult Create()
         {
+            ViewBag.ListaOrganizacoes = new SelectList(organizacaoController.ObterOrganizacoes(true), "Id", "Nome");
+            ViewBag.ListaColaboradores = new SelectList(colaboradorController.ObterColaboradores(true), "Id", "Nome");
+
             return View();
         }
 
@@ -57,6 +71,8 @@ namespace Padronizei.Controllers
         {
             if (ModelState.IsValid)
             {
+                grupoTrabalho.DataCriacao = DateTime.Now;
+
                 _context.Add(grupoTrabalho);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -77,6 +93,10 @@ namespace Padronizei.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.ListaOrganizacoes = new SelectList(organizacaoController.ObterOrganizacoes(true), "Id", "Nome");
+            ViewBag.ListaColaboradores = new SelectList(colaboradorController.ObterColaboradores(true), "Id", "Nome");
+
             return View(grupoTrabalho);
         }
 
@@ -97,6 +117,10 @@ namespace Padronizei.Controllers
                 try
                 {
                     _context.Update(grupoTrabalho);
+
+                    // Desabilita a alteração deste campo na edição                    
+                    _context.Entry(grupoTrabalho).Property(x => x.DataCriacao).IsModified = false;
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -124,6 +148,8 @@ namespace Padronizei.Controllers
             }
 
             var grupoTrabalho = await _context.GruposTrabalhos
+                .Include(x => x.Organizacao)
+                .Include(x => x.Colaborador)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (grupoTrabalho == null)
             {

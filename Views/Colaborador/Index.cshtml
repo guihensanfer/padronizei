@@ -10,15 +10,23 @@
     <a asp-action="Create">Criar novo</a>
 </p>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Index" method="GET">
             <div class="form-group">
-                <label for="buscaNome" class="control-label"></label>
-                <input id="buscaNome" name="nome" type="text" placeholder="Procurar por nome" value="@Context.Request.Query["nome"].ToString()" class="form-control" />                
-            </div>
-            <div class="form-group">                
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="buscaNome" class="control-label"></label>
+                        <input id="buscaNome" name="nome" type="text" placeholder="Procurar por nome" value="@Context.Request.Query["nome"].ToString()" class="form-control" />                
+                    </div>
+                    <div class="col-md-4">
+                        <label for="buscaEmail" class="control-label"></label>
+                        <input id="buscaEmail" name="email" type="text" placeholder="Procurar por e-mail" value="@Context.Request.Query["email"].ToString()" class="form-control" />                
+                    </div>                    
+                </div>                
+            </div>        
+            <div class="form-group">
                 <input id="buscaFiltro" type="submit" value="Pesquisar agora" class="button" />                
-            </div>
+            </div>    
         </form>
     </div>
 </div>

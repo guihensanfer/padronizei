@@ -14,6 +14,7 @@ namespace Padronizei.Models
         public string Nome{get;set;}        
         [StringLength(15)]
         public string CNPJ{get;set;}
+        [DataType(DataType.Date)]
         [Display(Name="Data de criação")]
         public DateTime DataCriacao{get;set;}
     }

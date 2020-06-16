@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Padronizei.Models;
 
@@ -10,10 +11,12 @@ namespace Padronizei.Controllers
     public class DepartamentoController : Controller
     {
         private readonly AplicacaoDbContext _context;
+        private OrganizacaoController organizacaoController;
 
         public DepartamentoController(AplicacaoDbContext context)
         {
             _context = context;
+            organizacaoController = new OrganizacaoController(context);
         }
 
         public List<Departamento> ObterDepartamentos(bool listaParaSelectField = false)
@@ -48,6 +51,7 @@ namespace Padronizei.Controllers
             }
 
             var departamento = await _context.Departamentos
+                .Include(x => x.Organizacao)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (departamento == null)
             {
@@ -60,6 +64,8 @@ namespace Padronizei.Controllers
         // GET: Departamento/Create
         public IActionResult Create()
         {
+            ViewBag.ListaOrganizacoes = new SelectList(organizacaoController.ObterOrganizacoes(true), "Id", "Nome");
+
             return View();
         }
 
@@ -87,11 +93,17 @@ namespace Padronizei.Controllers
                 return NotFound();
             }
 
-            var departamento = await _context.Departamentos.FindAsync(id);
+            var departamento = await _context.Departamentos
+                .Include(x => x.Organizacao)
+                .FirstOrDefaultAsync(x => x.Id.Equals(id));
+                
             if (departamento == null)
             {
                 return NotFound();
             }
+
+            ViewBag.ListaOrganizacoes = new SelectList(organizacaoController.ObterOrganizacoes(true), "Id", "Nome");
+            
             return View(departamento);
         }
 
@@ -139,7 +151,8 @@ namespace Padronizei.Controllers
             }
 
             var departamento = await _context.Departamentos
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Include(x => x.Organizacao)
+                .FirstOrDefaultAsync(x => x.Id.Equals(id));
             if (departamento == null)
             {
                 return NotFound();
