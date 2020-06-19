@@ -1,4 +1,4 @@
-@model IEnumerable<Padronizei.Models.Conteudo>
+@model ReflectionIT.Mvc.Paging.PagingList<Padronizei.Models.Conteudo>
 
 @{
     ViewData["Title"] = "Conteúdos";
@@ -9,6 +9,23 @@
 <p>
     <a asp-action="Create">Criar</a>
 </p>
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Index" method="GET">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="buscaTermo" class="control-label"></label>
+                        <input id="buscaTermo" name="termo" type="text" placeholder="Procurar por termo" value="@Context.Request.Query["termo"].ToString()" class="form-control" />                
+                    </div>                    
+                </div>                
+            </div>        
+            <div class="form-group">
+                <input id="buscaFiltro" type="submit" value="Pesquisar agora" class="button" />                
+            </div>    
+        </form>
+    </div>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -16,7 +33,7 @@
                 @Html.DisplayNameFor(model => model.Titulo)
             </th>            
             <th>
-                @Html.DisplayNameFor(model => model.Visibilidade)
+                @Html.DisplayNameFor((Conteudo model) => model.Visibilidade)
             </th>            
             <th>
                 @Html.DisplayNameFor(model => model.DepartamentoId)
@@ -57,3 +74,6 @@
 }
     </tbody>
 </table>
+<nav aria-label="pagination">
+    <vc:pager paging-list="@Model"/>
+</nav>

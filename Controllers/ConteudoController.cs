@@ -4,7 +4,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Padronizei.Models;
+using ReflectionIT.Mvc.Paging;
 
 namespace Padronizei.Controllers
 {
@@ -13,21 +15,36 @@ namespace Padronizei.Controllers
         private readonly AplicacaoDbContext _context;
         private readonly DepartamentoController departamentoController;
         private readonly ColaboradorController colaboradorController;
+        public IConfiguration Configuration { get; }
 
-        public ConteudoController(AplicacaoDbContext context)
+        public ConteudoController(AplicacaoDbContext context, IConfiguration configuration)
         {
             _context = context;
             departamentoController = new DepartamentoController(_context);
             colaboradorController = new ColaboradorController(_context, null);
+            Configuration = configuration;
         }
 
         // GET: Conteudo
-        public async Task<IActionResult> Index()
-        {            
-            return View(await _context.Conteudos
-                .Include(x => x.Colaborador)
+        public async Task<IActionResult> Index(int page = 1, string termo = null)
+        {       
+            int paginacaoPadrao = Configuration.GetValue<int>("ParametrosPadroesProjeto:QuantidadeItensListadosPaginacao");
+            var conteudos = _context.Conteudos
                 .Include(x => x.Departamento)
-                .ToListAsync());
+                .Include(x => x.Colaborador)
+                .AsNoTracking();
+
+            // Filtra por termo
+            if(!string.IsNullOrEmpty(termo))
+                conteudos = conteudos
+                    .Where(c => c.Titulo.Contains(termo) || c.Corpo.Contains(termo));            
+
+            // Por fim, gera uma lista ordenada para ser paginada
+            var resultante = conteudos                
+                .OrderByDescending(x => x.Visibilidade)
+                .ThenByDescending(x => x.DataCriacao);                                
+                
+            return View(await PagingList.CreateAsync(resultante, paginacaoPadrao, page));            
         }
 
         // GET: Conteudo/Details/5

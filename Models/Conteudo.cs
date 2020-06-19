@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Padronizei.Models
-{    
+{        
     public enum Visibilidade
     {
         [Display(Name="Público")]
@@ -15,7 +15,7 @@ namespace Padronizei.Models
 
     [Table("Conteudo")]
     public class Conteudo
-    {        
+    {            
         [Key]
         public int Id{get;set;}
         [Required]
