@@ -92,4 +92,9 @@ obj/Debug/netcoreapp3.1/Razor/Views/Organizacao/Index.cshtml.g.cs
 obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
 obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
 *.cshtml.g.cs
+<<<<<<< HEAD
 obj/Debug/netcoreapp3.1/Padronizei.csprojAssemblyReference.cache
+=======
+/.vs/Padronizei/DesignTimeBuild/.dtbcache.v2
+/obj/Release/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+>>>>>>> desenvolvimento

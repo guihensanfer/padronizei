@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Padronizei.Models;
 
@@ -18,11 +17,24 @@ namespace Padronizei.Controllers
             _context = context;
         }
 
+        public List<Organizacao> ObterOrganizacoes(bool listaParaSelectField = false)
+        {
+            List<Organizacao> resultante = _context.Organizacoes.ToList();
+
+            if(listaParaSelectField)
+                resultante.Insert(0, new Organizacao(){
+                    Id = 0,
+                    Nome = "Selecione uma organização"                    
+                });
+
+            return resultante;
+        }
+
         // GET: Organizacao
         public async Task<IActionResult> Index()
         {
             return View(await _context.Organizacoes.ToListAsync());
-        }
+        }        
 
         // GET: Organizacao/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -57,6 +69,8 @@ namespace Padronizei.Controllers
         {
             if (ModelState.IsValid)
             {
+                organizacao.DataCriacao = DateTime.Now;
+
                 _context.Add(organizacao);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -97,6 +111,10 @@ namespace Padronizei.Controllers
                 try
                 {
                     _context.Update(organizacao);
+                    
+                    // Desabilita a alteração deste campo na edição                    
+                    _context.Entry(organizacao).Property(x => x.DataCriacao).IsModified = false;
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

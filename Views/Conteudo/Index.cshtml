@@ -1,34 +1,48 @@
-@model IEnumerable<Padronizei.Models.Conteudo>
+@model ReflectionIT.Mvc.Paging.PagingList<Padronizei.Models.Conteudo>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Conteúdos";
 }
 
-<h1>Index</h1>
+<h1>Conteúdos</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar</a>
 </p>
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Index" method="GET">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="buscaTermo" class="control-label"></label>
+                        <input id="buscaTermo" name="termo" type="text" placeholder="Procurar por termo" value="@Context.Request.Query["termo"].ToString()" class="form-control" />                
+                    </div>                    
+                </div>                
+            </div>        
+            <div class="form-group">
+                <input id="buscaFiltro" type="submit" value="Pesquisar agora" class="button" />                
+            </div>    
+        </form>
+    </div>
+</div>
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Titulo)
-            </th>
+            </th>            
             <th>
-                @Html.DisplayNameFor(model => model.Corpo)
-            </th>
+                @Html.DisplayNameFor((Conteudo model) => model.Visibilidade)
+            </th>            
             <th>
-                @Html.DisplayNameFor(model => model.Visibilidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataCriacao)
+                @Html.DisplayNameFor(model => model.DepartamentoId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ColaboradorId)
-            </th>
+            </th>            
             <th>
-                @Html.DisplayNameFor(model => model.DepartamentoId)
+                @Html.DisplayNameFor(model => model.DataCriacao)
             </th>
             <th></th>
         </tr>
@@ -38,28 +52,28 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Titulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Corpo)
-            </td>
+            </td>            
             <td>
                 @Html.DisplayFor(modelItem => item.Visibilidade)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.Departamento.Nome)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Colaborador.Nome)
+            </td>            
             <td>
                 @Html.DisplayFor(modelItem => item.DataCriacao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ColaboradorId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartamentoId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+<nav aria-label="pagination">
+    <vc:pager paging-list="@Model"/>
+</nav>
